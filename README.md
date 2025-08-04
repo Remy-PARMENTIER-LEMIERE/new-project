@@ -46,12 +46,18 @@ Voici un projet Nextjs fraîchement initialisé avec Biome. Cette configuration 
     "biome:format": "biome format --write .",
     "dev": "next dev --turbopack",
     "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "start": "next start"
   },
   ```
 
-## Et Zé Bartiiii !!!
+  #### Installer Prisma avec MySQL
+
+  - <code>npm i prisma --save-dev</code>
+  - <code>npx prisma init --datasource-provider mysql</code> 
+  - Paramêtrer grâce au .env.sample le .env qui vient de se créer. 
+
+
+## Et Zé Bartiiii !!! 🚀
 
 Vous voici prêts pour débuter votre nouvel apprentissage de cette techno !!
 
