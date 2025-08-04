@@ -55,6 +55,19 @@ Voici un projet Nextjs fraîchement initialisé avec Biome. Cette configuration 
   - <code>npm i prisma --save-dev</code>
   - <code>npx prisma init --datasource-provider mysql</code> 
   - Paramêtrer grâce au .env.sample le .env qui vient de se créer. 
+  - <code>npx prisma db push</code> pour initialiser la base de données
+  - Dans <code>src/app</code> créer un dossier <code>lib</code> et à l'intérieur un fichier <code>prima.ts</code> puis copier le code suivant à l'intérieur :
+
+  ```ts
+  // lib/prisma.ts
+  import { PrismaClient } from "@/generated/prisma";
+
+  const globalForPrisma = global as unknown as { prisma: PrismaClient };
+
+  export const prisma = globalForPrisma.prisma || new PrismaClient();
+
+  if (process.env.NODE_ENV !== "production") globalForPrisma.prisma = prisma;
+  ```
 
 
 ## Et Zé Bartiiii !!! 🚀
